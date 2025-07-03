@@ -1,5 +1,8 @@
 # Customer Lifetime Value (CLV) Prediction Project
 
+**Live Demo:** [Check out the deployed app!](https://clv-prediction-dashboard-s168.streamlit.app/)
+
+
 🚀 A comprehensive machine learning project for predicting Customer Lifetime Value using the Online Retail Dataset from Kaggle.
 
 ## 📋 Table of Contents
