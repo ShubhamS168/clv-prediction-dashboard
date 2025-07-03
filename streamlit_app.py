@@ -316,7 +316,7 @@ class CLVDashboard:
 
         try:
             # Load model results
-            results_df = pd.read_csv('outputs/model_evaluation_results.csv')
+            results_df = results = pd.read_csv('outputs/results/model_evaluation_results.csv')
 
             # Performance metrics
             st.subheader("Model Comparison")
@@ -345,7 +345,7 @@ class CLVDashboard:
 
             # Feature importance
             try:
-                feature_importance = pd.read_csv('outputs/feature_importance.csv')
+                feature_importance = pd.read_csv('outputs/results/feature_importance.csv')
                 st.subheader("Feature Importance")
 
                 fig_importance = px.bar(feature_importance.head(10), 
