@@ -263,10 +263,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- **Author**: Your Name
-- **Email**: your.email@example.com
-- **LinkedIn**: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
-- **GitHub**: [Your GitHub Profile](https://github.com/yourusername)
+- **Author**: [Shubham Sourav]((https://github.com/ShubhamS168))
+- **Email**: shubhamsourav475@gmail.com
+- **LinkedIn**: [in](www.linkedin.com/in/shubham-sourav-460493264)
+- **GitHub**: [ShubhamS168](https://github.com/ShubhamS168)
 
 ---
 
@@ -276,7 +276,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ```bash
 # Clone and setup
-git clone https://github.com/your-username/clv-prediction-project.git
+git clone https://github.com/ShubhamS168/clv-prediction-project.git
 cd clv-prediction-project
 pip install -r requirements.txt
 
