@@ -1,6 +1,6 @@
 # Customer Lifetime Value (CLV) Prediction Project
 
-**Live Demo:** [Check out the deployed app!](https://clv-prediction-dashboard-s168.streamlit.app/)
+**Live Demo:** [Check out the deployed app!](https://clv-prediction-dashboard.streamlit.app/)
 
 
 🚀 A comprehensive machine learning project for predicting Customer Lifetime Value using the Online Retail Dataset from Kaggle.
@@ -279,8 +279,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ```bash
 # Clone and setup
-git clone https://github.com/ShubhamS168/clv-prediction-project.git
-cd clv-prediction-project
+git clone https://github.com/ShubhamS168/clv-prediction-dashboard.git
+cd clv-prediction-dashboard
 pip install -r requirements.txt
 
 # Run the pipeline
@@ -289,5 +289,27 @@ cd src && python data_cleaning.py && python feature_engineering.py && python mod
 # Launch dashboard  
 streamlit run streamlit_app.py
 ```
+
+
+## 📬 Credits
+
+- **Author**: [**Shubham Sourav**](https://github.com/ShubhamS168) - *Data Science Intern at Celebal Technologies*
+
+## 📬 Contact
+
+For any queries, feedback, or collaboration, feel free to connect:
+
+📧 **Email:** [shubhamsourav475@gmail.com](mailto:shubhamsourav475@gmail.com)
+
+---
+
+> 📝 **Note:**  
+> This repository is maintained as part of the CSI (Celebal Summer Internship) program and is intended for educational use.
+
+## 🪪 License
+
+Distributed under the MIT License.  
+© 2025 Shubham Sourav. All rights reserved.
+
 
 Happy predicting! 🎉
