@@ -14,16 +14,19 @@ xgboost>=1.5.0
 # Advanced CLV Modeling (Optional)
 lifetimes>=0.11.0
 
-# Streamlit Dashboard
-streamlit>=1.12.0
+# Streamlit Dashboard - Latest Version
+streamlit>=1.46.0
+streamlit-option-menu>=0.3.6
 
 # Jupyter Notebook
 jupyter>=1.0.0
 ipython>=7.0.0
 
 # Utility Libraries
-datetime
 pickle-mixin>=1.0.0
+
+# Performance Enhancement
+orjson>=3.8.0
 
 # Development and Testing (Optional)
 pytest>=6.0.0
@@ -35,3 +38,7 @@ great-expectations>=0.14.0
 
 # Performance Monitoring (Optional)
 memory-profiler>=0.58.0
+
+# Modern UI Components (Optional)
+streamlit-extras>=0.3.0
+streamlit-shadcn-ui>=0.1.0
