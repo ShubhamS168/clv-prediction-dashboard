@@ -1,108 +1,114 @@
-# Customer Lifetime Value (CLV) Prediction Project
+# 💰 Customer Lifetime Value (CLV) Prediction Project
 
-**Live Demo:** [Check out the deployed app!](https://clv-prediction-dashboard.streamlit.app/)
+**Live Demo:** [CLV Dashboard App](https://clv-prediction-dashboard.streamlit.app/)
 
 
-🚀 A comprehensive machine learning project for predicting Customer Lifetime Value using the Online Retail Dataset from Kaggle.
+🚀 A complete end-to-end machine learning and dashboarding solution to predict Customer Lifetime Value (CLV) using the Online Retail Dataset. This solution includes automated data cleaning, feature engineering, multi-model training, and a production-ready Streamlit app with rich UI/UX.
 
-## 📋 Table of Contents
-- [Project Overview](#project-overview)
-- [Dataset](#dataset)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Models](#models)
-- [Results](#results)
-- [Streamlit Dashboard](#streamlit-dashboard)
-- [Contributing](#contributing)
-- [License](#license)
+---
 
-## 🎯 Project Overview
+> 📝 **Note:**  
+> This repository is maintained as part of the CSI (Celebal Summer Internship) program and is intended for educational use.
 
-This project implements a complete CLV prediction pipeline including:
-- **Data cleaning and preprocessing**
-- **RFM (Recency, Frequency, Monetary) analysis**
-- **Multiple machine learning models**
-- **Interactive Streamlit dashboard**
-- **Comprehensive visualizations**
-- **Model evaluation and comparison**
+## 📌 Project Objective
+
+**Predict the future monetary value a customer will bring to a business**, using their transaction history, purchase frequency, recency, and additional behavioral metrics. The aim is to help businesses:
+
+- Identify high-value customers 🏆
+- Strategize marketing based on customer segments 🎯
+- Use real-time dashboards for actionable insights 📊
 
 ## 📊 Dataset
 
 The project uses the **Online Retail Dataset** from Kaggle:
-- **Source**: https://www.kaggle.com/datasets/lakshmi25npathi/online-retail-dataset
+
+- **Source**: [Kaggle - Online Retail Dataset](https://www.kaggle.com/datasets/lakshmi25npathi/online-retail-dataset)
 - **Description**: E-commerce transactions from a UK-based retailer
 - **Time Period**: December 2009 - December 2011
 - **Features**: Invoice, StockCode, Description, Quantity, InvoiceDate, Price, CustomerID, Country
+
+---
 
 ## 📁 Project Structure
 
 ```
 clv-prediction-project/
-├── data/                          # Data files
-│   ├── online_retail_dataset.csv  # Original dataset
-│   ├── cleaned_retail_data.csv    # Cleaned data
-│   ├── rfm_analysis.csv          # RFM metrics
-│   └── clv_dataset.csv           # Final modeling dataset
-├── src/                          # Python modules
-│   ├── data_cleaning.py          # Data preprocessing
-│   ├── feature_engineering.py    # RFM analysis and feature creation
-│   ├── modeling.py               # ML model training and evaluation
-│   └── visualization.py          # Plotting and visualization
-├── notebooks/                    # Jupyter notebooks
-│   └── CLV_Modeling.ipynb        # Main analysis notebook
-├── outputs/                      # Generated outputs
-│   ├── plots/                    # Visualization files
-│   └── models/                   # Trained models and scalers
-├── streamlit_app.py              # Interactive dashboard
-├── requirements.txt              # Python dependencies
-└── README.md                     # Project documentation
+│
+├── .streamlit/
+│   └── config.toml                                 # Streamlit UI configuration (layout, theme)
+│
+├── data/                                           # Raw, cleaned, and transformed data files
+│   ├── cleaned_retail_data.csv                     # Preprocessed version of the raw dataset
+│   ├── clv_dataset.csv                             # Final dataset used for model training
+│   ├── modeling_features.csv                       # Dataset with selected features for modeling
+│   ├── online_retail_dataset.csv                   # Original raw retail transaction dataset
+│   └── rfm_analysis.csv                            # RFM (Recency, Frequency, Monetary) analysis results
+│
+├── notebook/
+│   └── CLV_Modeling.ipynb                          # Jupyter notebook for EDA, modeling, and evaluation
+│
+├── outputs/
+│   ├── models/                                     # Serialized machine learning models and metadata
+│   │   ├── clv_model_gradient_boosting.pkl         # Gradient Boosting model file
+│   │   ├── clv_model_lasso_regression.pkl          # Lasso Regression model file
+│   │   ├── clv_model_linear_regression.pkl         # Linear Regression model file
+│   │   ├── clv_model_random_forest.pkl             # Random Forest model file
+│   │   ├── clv_model_ridge_regression.pkl          # Ridge Regression model file
+│   │   ├── clv_model_svr.pkl                       # Support Vector Regression model file
+│   │   ├── clv_model_xgboost.pkl                   # XGBoost model file
+│   │   ├── feature_names.pkl                       # Pickled list of feature names used in training
+│   │   └── scaler.pkl                              # Scaler object used for feature normalization
+│   │
+│   ├── plots/                                      # Generated plots and visual insights
+│   │   ├── actual_vs_predicted_random_forest.png   # Plot comparing actual vs predicted values
+│   │   ├── clv_dashboard.png                       # Screenshot/visual of Streamlit dashboard
+│   │   ├── clv_distribution.png                    # Histogram of predicted CLV values
+│   │   ├── customer_segments.png                   # Customer segmentation visualization
+│   │   ├── feature_importance.png                  # Feature importance from a model
+│   │   ├── model_comparison.png                    # Model comparison based on evaluation metrics
+│   │   ├── rfm_distribution.png                    # Distribution plot of RFM values
+│   │   └── top_customers.png                       # Visualization of top CLV customers
+│   │
+│   └── results/
+│       ├── feature_importance.csv                  # Tabular data showing feature importance scores
+│       └── model_evaluation_results.csv            # Metrics (R2, MAE, RMSE, etc.) for all trained models
+│
+├── src/                                            # Source code for the pipeline
+│   ├── data_cleaning.py                            # Cleans raw retail data (missing values, formatting, etc.)
+│   ├── feature_engineering.py                      # Generates RFM features and prepares final dataset
+│   ├── modeling.py                                 # Trains multiple regression models and evaluates them
+│   └── visualization.py                            # Generates all the charts and plots for analysis
+│
+├── streamlit_app.py                                # Streamlit app file to launch the interactive dashboard
+├── run_pipeline.py                                 # Script to run the entire pipeline (cleaning → modeling)
+├── requirements.txt                                # Lists Python packages and dependencies required to run the project
+└── README.md                                       # Project overview, setup instructions, and usage guide
+
 ```
 
 ## 🛠️ Installation
 
 1. **Clone the repository:**
+
 ```bash
 git clone https://github.com/your-username/clv-prediction-project.git
 cd clv-prediction-project
 ```
 
 2. **Create virtual environment:**
+
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 3. **Install dependencies:**
+
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Download the dataset:**
-   - Download from [Kaggle](https://www.kaggle.com/datasets/lakshmi25npathi/online-retail-dataset)
-   - Place `online_retail_dataset.csv` in the `data/` folder
-
-## 🚀 Usage
-
-### Option 1: Run the Complete Pipeline
-
-```bash
-# 1. Clean the data
-cd src
-python data_cleaning.py
-
-# 2. Perform feature engineering
-python feature_engineering.py
-
-# 3. Train models
-python modeling.py
-
-# 4. View results in the notebook
-jupyter notebook ../notebooks/CLV_Modeling.ipynb
-```
-
-### Option 2: Use the Streamlit Dashboard
+4. **Use the Streamlit Dashboard**
 
 ```bash
 streamlit run streamlit_app.py
@@ -110,38 +116,19 @@ streamlit run streamlit_app.py
 
 Then open your browser to `http://localhost:8501`
 
+---
+
 ## ✨ Features
 
-### Data Processing
-- ✅ Remove missing CustomerID records
-- ✅ Filter out canceled orders
-- ✅ Handle negative quantities and prices
-- ✅ Create derived features (TotalPrice)
-- ✅ Outlier detection and removal
+- 📦 Full data pipeline from raw CSV to production dashboard
+- 📈 RFM analysis and customer segmentation
+- 🧠 Trains and compares 7 regression models
+- 🔍 Feature importance charts and metric tables
+- 🎯 Real-time CLV prediction for user-input profiles
+- 🧭 Navigation: Home | Make Prediction | Model Insights | About
+- 🌐 Mobile-responsive UI using custom CSS and Plotly visuals
 
-### RFM Analysis
-- ✅ **Recency**: Days since last purchase
-- ✅ **Frequency**: Number of orders
-- ✅ **Monetary**: Total amount spent
-- ✅ Customer segmentation based on RFM scores
-- ✅ Additional features (tenure, purchase rate, etc.)
-
-### Machine Learning Models
-- ✅ Linear Regression
-- ✅ Ridge Regression
-- ✅ Lasso Regression
-- ✅ Random Forest
-- ✅ Gradient Boosting
-- ✅ Support Vector Regression
-- ✅ XGBoost (optional)
-
-### Visualizations
-- ✅ RFM distribution plots
-- ✅ Customer segmentation charts
-- ✅ Model performance comparison
-- ✅ Feature importance analysis
-- ✅ Actual vs Predicted plots
-- ✅ Comprehensive dashboard
+---
 
 ## 🤖 Models
 
@@ -154,10 +141,12 @@ The project implements multiple regression models for CLV prediction:
 | **XGBoost** | Gradient boosting | High accuracy |
 | **Ridge/Lasso** | Regularized linear models | Feature selection |
 
-### Model Evaluation Metrics
-- **RMSE** (Root Mean Square Error)
-- **MAE** (Mean Absolute Error)
-- **R²** (R-squared Score)
+**Performance Metrics**:
+
+- **R² Score**: Indicates prediction power (closer to 1 is better)
+- **MAE**: Measures average error magnitude
+- **RMSE**: Penalizes larger errors
+
 
 ## 📈 Results
 
@@ -173,67 +162,102 @@ The project implements multiple regression models for CLV prediction:
 - **At Risk**: Previously valuable, now inactive
 - **Lost**: Haven't purchased recently
 
-## 🖥️ Streamlit Dashboard
+---
 
-The interactive dashboard provides:
+## 📊 Visual Insights
 
-### 🎯 CLV Prediction Page
-- Input customer RFM metrics
-- Select prediction model
-- Get CLV prediction and customer segment
-- Visual RFM profile (radar chart)
-- Personalized recommendations
+Visuals generated from the app to drive insight and exploration:
 
-### 📊 Data Analysis Page
-- Dataset summary statistics
-- Customer segment distribution
-- Revenue analysis
-- Top customers ranking
-- Interactive data tables
+### RFM Segmentation:
 
-### 🤖 Model Performance Page
-- Model comparison charts
-- Performance metrics
-- Feature importance visualization
-- Best model identification
+![rfm_distribution](outputs\plots\rfm_distribution.png)
+> Shows customer groupings based on Recency, Frequency, and Monetary scores.
 
-### Dashboard Screenshots
-*Add screenshots of your dashboard here*
+### CLV Distribution:
+
+![clv_distribution](outputs\plots\clv_distribution.png)
+> Histogram illustrating customer value concentration across the base.
+
+### Feature Importance:
+
+![feature_importance](outputs\plots\feature_importance.png)
+> Highlights key drivers affecting CLV predictions.
+
+### Model Comparison:
+
+![model_comparison](outputs/plots/model_comparison.png)
+> Benchmark comparison of all trained models based on R², MAE, RMSE.
+
+---
+
+## 🌐 Dashboard Usage Guide
+
+### 1. **Launch the App**
+
+Run the app with:
+
+```bash
+streamlit run streamlit_app.py
+```
+
+### 2. **Navigation Tabs**
+
+![Home page](webAppImg/home.png)
+> **Home**: Summary analytics and charts from historical data
+---
+![prediction_page](webAppImg/prediction_page.png)
+> **Make Prediction**: Input customer data and choose model for CLV prediction
+---
+![model_insights_page](webAppImg/model_insights_page.png)
+> **Model Insights**: Compare model performance and see feature influence
+---
+![about](webAppImg/about.png)
+> **About**: Overview of project goals and limitations
+
+### 3. **Making Predictions**
+
+![CLV_prediction](webAppImg/CLV_prediction.png)
+
+- Use sliders and inputs to simulate a customer profile (recency, frequency, etc.)
+- Choose a model (e.g., Random Forest)
+- Click “Predict” to get:
+  - Estimated CLV
+  - Recommended customer segment (High / Medium / Low)
+  - Strategic business actions (e.g., retention, targeting)
+
+### 4. **Customize Dashboard**
+
+The UI is built with custom CSS for an enterprise look. Modify:
+
+- `.streamlit/config.toml` for layout
+- `streamlit_app.py` for branding, chart themes
+
+---
 
 ## 📊 Sample Predictions
+
+![image](webAppImg/image.png)
 
 ```python
 # Example: Predict CLV for a customer
 customer_features = {
-    'Recency': 30,      # Days since last purchase
-    'Frequency': 5,     # Number of orders
+    'Recency': 230,      # Days since last purchase
+    'Frequency':34,     # Number of orders
     'Monetary': 500,    # Total spent
-    'R_Score': 4,       # Recency score (1-5)
+    'R_Score': 3,       # Recency score (1-5)
     'F_Score': 3,       # Frequency score (1-5) 
-    'M_Score': 4        # Monetary score (1-5)
+    'M_Score': 3        # Monetary score (1-5)
 }
 
 predicted_clv = model.predict(customer_features)
-# Output: $247.58
+# Output: $1329.34
 ```
 
-## 🛠️ Advanced Features
-
-### Optional: BG/NBD + Gamma-Gamma Model
-The project includes optional advanced CLV modeling using the `lifetimes` package:
-
-```bash
-pip install lifetimes
-```
-
-This implements:
-- **BG/NBD Model**: Predicts customer purchase frequency
-- **Gamma-Gamma Model**: Predicts monetary value
-- **Combined CLV**: Expected revenue over time period
 
 ## 📝 Model Interpretation
 
 ### Feature Importance (Random Forest)
+
 1. **Monetary**: Total amount spent (most important)
 2. **Frequency**: Number of orders
 3. **Recency**: Days since last purchase
@@ -241,6 +265,7 @@ This implements:
 5. **Unique Products**: Product diversity
 
 ### Business Insights
+
 - **High CLV Indicators**: Recent purchases, frequent orders, high spending
 - **Risk Factors**: Long recency, low frequency, declining monetary value
 - **Segmentation**: Clear customer tiers for targeted marketing
@@ -266,50 +291,33 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- **Author**: [Shubham Sourav]((https://github.com/ShubhamS168))
-- **Email**: shubhamsourav475@gmail.com
-- **LinkedIn**: [in](www.linkedin.com/in/shubham-sourav-460493264)
+- **Author**: [Shubham Sourav](https://github.com/ShubhamS168)
+- **Email**: [shubhamsourav475@gmail.com](mailto:shubhamsourav475@gmail.com)
+- **LinkedIn**: [in](https://www.linkedin.com/in/shubham-sourav-460493264/)
 - **GitHub**: [ShubhamS168](https://github.com/ShubhamS168)
 
 ---
 
-⭐ **Star this repository if you found it helpful!** ⭐
+## ✍️ Author
 
-## 🚀 Quick Start Commands
-
-```bash
-# Clone and setup
-git clone https://github.com/ShubhamS168/clv-prediction-dashboard.git
-cd clv-prediction-dashboard
-pip install -r requirements.txt
-
-# Run the pipeline
-cd src && python data_cleaning.py && python feature_engineering.py && python modeling.py
-
-# Launch dashboard  
-streamlit run streamlit_app.py
-```
-
-
-## 📬 Credits
-
-- **Author**: [**Shubham Sourav**](https://github.com/ShubhamS168) - *Data Science Intern at Celebal Technologies*
-
-## 📬 Contact
-
-For any queries, feedback, or collaboration, feel free to connect:
-
-📧 **Email:** [shubhamsourav475@gmail.com](mailto:shubhamsourav475@gmail.com)
+**Shubham Sourav**  
+*Data Science Intern at Celebal Technologies*
 
 ---
 
-> 📝 **Note:**  
-> This repository is maintained as part of the CSI (Celebal Summer Internship) program and is intended for educational use.
+## 📚 Project Goal Reminder
 
-## 🪪 License
+**Customer Lifetime Value Prediction**
 
-Distributed under the MIT License.  
-© 2025 Shubham Sourav. All rights reserved.
+The objective of this project is to **predict the future value a customer brings to a business** over the entire duration of their relationship. The system is designed to:
 
+- 🛍️ Leverage **past purchase history, purchase frequency, and customer demographics**
+- 📈 Estimate **Customer Lifetime Value (CLV)** using machine learning models
+- 🧠 Provide insights that help businesses **optimize marketing strategies and customer retention efforts** 
+
+This project applies data-driven techniques to **identify high-value customers**, guide **resource allocation**, and simulate **real-world business decision-making** based on predictive analytics.
+
+---
 
 Happy predicting! 🎉
+⭐ **Star this repository if you found it helpful!** ⭐
