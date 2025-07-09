@@ -493,7 +493,7 @@ class EnhancedCLVDashboard:
             )
             # st.markdown("---")
             st.markdown('<div class="sidebar-tab-header">🚀 Deployment Info</div>', unsafe_allow_html=True)
-            st.info("Production-ready model for real-time CLV prediction and strategic analysis.")
+            st.info("Production-ready model for real-time Customer Lifetime Value (CLV) prediction and strategic analysis.")
             # st.markdown("---")
             st.markdown('<div class="sidebar-tab-header">📊 Quick Stats</div>', unsafe_allow_html=True)
             # st.subheader("📊 Quick Stats")
