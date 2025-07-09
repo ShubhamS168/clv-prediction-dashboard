@@ -1055,7 +1055,13 @@ class EnhancedCLVDashboard:
                 #     <p class="banner-text">R² (Coefficient of Determination) reflects how well the model explains the variance in the target variable. A value closer to 1 suggests strong explanatory power and better overall performance.</p>
                 # </div>            
                 # """, unsafe_allow_html=True)
-                
+                st.markdown("""
+                <div class="chart-container"> 
+                    <p class="banner-text">
+                        <a href="https://arize.com/blog-course/r-squared-understanding-the-coefficient-of-determination/" target="_blank" style="text-decoration: none; color: inherit;"><strong>R² (Coefficient of Determination)</strong></a> shows how well the model explains variance in the target variable. A value closer to 1 suggests strong explanatory power and better performance.
+                    </p>
+                </div>            
+                """, unsafe_allow_html=True)
                 fig_r2 = px.bar(results_df, x='Model', y='R²', title='R² Score Comparison',
                               color='R²', color_continuous_scale='Greens')
                 fig_r2.update_layout(
@@ -1074,13 +1080,6 @@ class EnhancedCLVDashboard:
                       f"- RMSE: {best_model['RMSE']:.2f}\n"
                       f"- MAE: {best_model['MAE']:.2f}")
             
-            st.markdown("""
-                <div class="chart-container"> 
-                    <p class="banner-text">
-                        <a href="https://arize.com/blog-course/r-squared-understanding-the-coefficient-of-determination/" target="_blank" style="text-decoration: none; color: inherit;"><strong>R² (Coefficient of Determination)</strong></a> shows how well the model explains variance in the target variable. A value closer to 1 suggests strong explanatory power and better performance.
-                    </p>
-                </div>            
-                """, unsafe_allow_html=True)
             st.markdown("---")
 
             # Enhanced detailed results table
