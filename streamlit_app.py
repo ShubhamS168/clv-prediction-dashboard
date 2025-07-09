@@ -876,7 +876,7 @@ class EnhancedCLVDashboard:
                 )
                 st.plotly_chart(fig_hist, use_container_width=True)
                 st.markdown("""<div class="chart-container">
-                    <p class="banner-text">This histogram shows the spread of predicted Customer Lifetime Value (CLV) across the customer base, highlighting how many customers fall into each CLV range.</p>
+                    <p class="banner-text">This histogram shows the spread of predicted CLV across the customer base, highlighting how many customers fall into each CLV range.</p>
                 </div>            
                 """, unsafe_allow_html=True)
                 st.markdown('</div>', unsafe_allow_html=True)
