@@ -518,10 +518,10 @@ class EnhancedCLVDashboard:
         """Enhanced CLV Prediction page with ALL original parameters"""
         # st.markdown('<div class="main-container fade-in">', unsafe_allow_html=True)
         st.markdown("""
-        <div class="banner-container fade-in">
-            <p class="banner-text">✅ Production Ready: Pre-trained models loaded and ready for deployment</p>
-        </div>
-        """, unsafe_allow_html=True)
+        # <div class="banner-container fade-in">
+        #     <p class="banner-text">✅ Production Ready: Pre-trained models loaded and ready for deployment</p>
+        # </div>
+        # """, unsafe_allow_html=True)
         st.header("🎯 Customer Lifetime Value Prediction")
         st.markdown("Use comprehensive customer metrics to predict CLV with advanced ML models")
         st.markdown('</div>', unsafe_allow_html=True)
@@ -947,11 +947,11 @@ class EnhancedCLVDashboard:
     def model_performance_page(self):
         """Enhanced Model Performance page with all original features"""
         # st.markdown('<div class="main-container fade-in">', unsafe_allow_html=True)
-        st.markdown("""
-        <div class="banner-container fade-in">
-            <p class="banner-text">✅ Production Ready: Pre-trained models loaded and ready for deployment</p>
-        </div>
-        """, unsafe_allow_html=True)
+        # st.markdown("""
+        # <div class="banner-container fade-in">
+        #     <p class="banner-text">✅ Production Ready: Pre-trained models loaded and ready for deployment</p>
+        # </div>
+        # """, unsafe_allow_html=True)
         st.header("🤖 Model Performance Analysis")
         st.markdown("Comprehensive evaluation of all trained models")
         st.markdown('</div>', unsafe_allow_html=True)
@@ -1144,11 +1144,11 @@ class EnhancedCLVDashboard:
 
     def about_page(self):
         """Creates the 'About' page"""
-        st.markdown("""
-        <div class="banner-container fade-in">
-            <p class="banner-text">✅ Production Ready: Pre-trained models loaded and ready for deployment</p>
-        </div>
-        """, unsafe_allow_html=True)
+        # st.markdown("""
+        # <div class="banner-container fade-in">
+        #     <p class="banner-text">✅ Production Ready: Pre-trained models loaded and ready for deployment</p>
+        # </div>
+        # """, unsafe_allow_html=True)
         st.title("ℹ️ About This Application")
         # st.markdown('<div class="main-container">', unsafe_allow_html=True)
         st.markdown("""
