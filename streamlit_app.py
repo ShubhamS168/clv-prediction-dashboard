@@ -1058,7 +1058,7 @@ class EnhancedCLVDashboard:
                 st.markdown("""
                 <div class="chart-container"> 
                     <p class="banner-text">
-                        <a href="https://arize.com/blog-course/r-squared-understanding-the-coefficient-of-determination/" target="_blank" style="text-decoration: none; color: inherit;"><strong>R² (Coefficient of Determination)</strong></a>  reflects how well the model explains the variance in the target variable. A value closer to 1 suggests strong explanatory power and better overall performance.
+                        <a href="https://arize.com/blog-course/r-squared-understanding-the-coefficient-of-determination/" target="_blank" style="text-decoration: none; color: inherit;"><strong>R² (Coefficient of Determination)</strong></a> shows how well the model explains variance in the target variable. A value closer to 1 suggests strong explanatory power and better performance.
                     </p>
                 </div>            
                 """, unsafe_allow_html=True)
