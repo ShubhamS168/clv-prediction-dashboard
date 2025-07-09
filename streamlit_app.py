@@ -517,7 +517,7 @@ class EnhancedCLVDashboard:
     def clv_prediction_page(self):
         """Enhanced CLV Prediction page with ALL original parameters"""
         # st.markdown('<div class="main-container fade-in">', unsafe_allow_html=True)
-        st.markdown("""
+        # st.markdown("""
         # <div class="banner-container fade-in">
         #     <p class="banner-text">✅ Production Ready: Pre-trained models loaded and ready for deployment</p>
         # </div>
