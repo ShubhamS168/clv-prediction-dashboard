@@ -79,6 +79,14 @@ clv-prediction-project/
 │   ├── modeling.py                                 # Trains multiple regression models and evaluates them
 │   └── visualization.py                            # Generates all the charts and plots for analysis
 │
+├── webAppImg/                                      # Screenshots of the Streamlit web application
+│   ├── about.png                                   # About section image
+│   ├── CLV_prediction.png                          # Main CLV predicted result
+│   ├── home.png                                    # Home page layout
+│   ├── sample_prediction.png                       # Page showing predicted result
+│   ├── model_insights_page.png                     # Visual of model metrics/insights
+│   └── prediction_page.png                         # Page showing prediction interface
+│
 ├── streamlit_app.py                                # Streamlit app file to launch the interactive dashboard
 ├── run_pipeline.py                                 # Script to run the entire pipeline (cleaning → modeling)
 ├── requirements.txt                                # Lists Python packages and dependencies required to run the project
@@ -151,12 +159,14 @@ The project implements multiple regression models for CLV prediction:
 ## 📈 Results
 
 ### Sample Results (will vary based on your data):
+
 - **Best Model**: Random Forest
 - **R² Score**: ~0.85
 - **RMSE**: ~$50-100
 - **Key Features**: Monetary, Frequency, Recency
 
 ### Customer Segments
+
 - **Champions**: High value, frequent buyers
 - **Loyal Customers**: Regular, valuable customers
 - **At Risk**: Previously valuable, now inactive
@@ -170,17 +180,17 @@ Visuals generated from the app to drive insight and exploration:
 
 ### RFM Segmentation:
 
-![rfm_distribution](outputs\plots\rfm_distribution.png)
+![rfm_distribution](outputs/plots/rfm_distribution.png)
 > Shows customer groupings based on Recency, Frequency, and Monetary scores.
 
 ### CLV Distribution:
 
-![clv_distribution](outputs\plots\clv_distribution.png)
+![clv_distribution](outputs/plots/clv_distribution.png)
 > Histogram illustrating customer value concentration across the base.
 
 ### Feature Importance:
 
-![feature_importance](outputs\plots\feature_importance.png)
+![feature_importance](outputs/plots/feature_importance.png)
 > Highlights key drivers affecting CLV predictions.
 
 ### Model Comparison:
@@ -236,7 +246,7 @@ The UI is built with custom CSS for an enterprise look. Modify:
 
 ## 📊 Sample Predictions
 
-![image](webAppImg/image.png)
+![image](webAppImg/sample_prediction.png)
 
 ```python
 # Example: Predict CLV for a customer
